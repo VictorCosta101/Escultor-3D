@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->horizontalSliderInf,SIGNAL(valueChanged(int)), ui->lcdNumberInf,SLOT(display(int)));
     connect(ui->pushButtonFechar, SIGNAL(clicked()),this,SLOT(finaliza()));
     connect(ui->pushButtonText,&QPushButton::clicked,this,&MainWindow::copiaTexto);
+    connect(ui->actionQuit,&QAction::triggered,this,&MainWindow::finaliza);
 }
 
 MainWindow::~MainWindow()
