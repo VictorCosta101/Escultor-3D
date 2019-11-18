@@ -1,0 +1,22 @@
+#ifndef PLOTTER_H
+#define PLOTTER_H
+
+#include <QWidget>
+#include <QAction>
+#include "sculptor.h"
+class Plotter:public QWidget
+{
+  Q_OBJECT
+   private:
+    int backR, backG, backB;
+    int mx, my, mz;
+
+public:
+    
+    explicit Plotter(QWidget *parent = nullptr);
+    void paintEvent(QPaintEvent *event);
+    void matriz(int x, int y, int z);
+    void mudarMatriz();
+};
+
+#endif // PLOTTER_H

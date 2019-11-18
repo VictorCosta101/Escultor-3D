@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
-    <height>473</height>
+    <width>691</width>
+    <height>443</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,7 +53,7 @@
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QSlider" name="horizontalSlider_4">
+          <widget class="QSlider" name="horizontalSliderEsferaX">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -90,7 +90,7 @@
             <widget class="QLCDNumber" name="lcdNumber_5"/>
            </item>
            <item row="1" column="1">
-            <widget class="QSlider" name="horizontalSlider_5">
+            <widget class="QSlider" name="horizontalSliderX">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -111,7 +111,7 @@
             <widget class="QLCDNumber" name="lcdNumber_6"/>
            </item>
            <item row="1" column="1">
-            <widget class="QSlider" name="horizontalSlider_6">
+            <widget class="QSlider" name="horizontalSliderY">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -287,7 +287,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>704</width>
+     <width>691</width>
      <height>21</height>
     </rect>
    </property>
@@ -299,8 +299,26 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionEsfera"/>
+   <addaction name="actionRetangulo"/>
+   <addaction name="actionElipsoid"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionEsfera">
+   <property name="text">
+    <string>Esfera</string>
+   </property>
+  </action>
+  <action name="actionRetangulo">
+   <property name="text">
+    <string>Retangulo </string>
+   </property>
+  </action>
+  <action name="actionElipsoid">
+   <property name="text">
+    <string>Elipsoid</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -317,7 +335,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>horizontalSlider_4</sender>
+   <sender>horizontalSliderEsferaX</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber_4</receiver>
    <slot>display(int)</slot>
@@ -333,7 +351,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSlider_5</sender>
+   <sender>horizontalSliderX</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber_5</receiver>
    <slot>display(int)</slot>
@@ -349,7 +367,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSlider_6</sender>
+   <sender>horizontalSliderY</sender>
    <signal>valueChanged(int)</signal>
    <receiver>lcdNumber_6</receiver>
    <slot>display(int)</slot>
