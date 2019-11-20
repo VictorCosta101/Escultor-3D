@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-        plotter.cpp
+        plotter.cpp \
+    sculptor.cpp
 
 HEADERS += \
         mainwindow.h \
-        plotter.h
+        plotter.h \
+    sculptor.h
 
 FORMS += \
         mainwindow.ui
