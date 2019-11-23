@@ -1,7 +1,7 @@
 #ifndef SCULPTOR_H
 #define SCULPTOR_H
 #include <iostream>
-
+#include <vector>
 using namespace  std;
 //estruct para os voxels
 struct Voxel {
@@ -42,6 +42,7 @@ public:
   // Cria uma aquivo OFF com as informações do objeto criado
   void writeOFF(string filename);
 
+ vector<vector<Voxel>> readM();
   int recR(int x, int y , int z);
   int recG(int x, int y , int z);
   int recB(int x, int y , int z);

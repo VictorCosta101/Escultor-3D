@@ -12,24 +12,31 @@ public:
 
     Sculptor *s;
 
-    vector<Voxel> objetos;
 
     //mouse
-    int mx,my;
+    int mx,my,cx,cy;
+
+    int forma = 1;
+    int tam1, tam2;
+
 
     explicit Plotter(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *event);
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
 
+    void Forma(int);
 
+private:
+    vector<vector<Voxel>> p;
 
 signals:
 void mouseX(int);
 void mouseY(int);
 public slots:
+void pVoxel();
 
-void voxel();
+
 };
 
 #endif // PLOTTER_H

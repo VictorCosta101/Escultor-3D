@@ -310,6 +310,33 @@ void Sculptor::writeOFF(string filename)
 
         objeto.close();
 }
+
+vector<vector<Voxel>> Sculptor::readM()
+{
+
+    vector<vector<Voxel>> m;
+    vector<Voxel> l;
+    l.resize(20);
+
+    for(int i = 0; i < 20; i++)
+    {
+        for(int j = 0 ; j < 10; j++)
+        {
+            l[j].isOn = v[i][j][5].isOn;
+            l[j].r    = v[i][j][5].r;
+            l[j].g    = v[i][j][5].g;
+            l[j].b    = v[i][j][5].b;
+        }
+
+        m.push_back(l);
+
+    }
+    l.clear();
+
+    return m;
+}
+
+
 int Sculptor::recR(int x, int y, int z)
 {
     return v[x][y][z].r;

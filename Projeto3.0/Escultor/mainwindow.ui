@@ -375,6 +375,26 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLCDNumber" name="lcdNumberX">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumberY">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>320</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -440,6 +460,7 @@
    <header>plotter.h</header>
    <container>1</container>
    <slots>
+    <slot>mudaAmplitude(int)</slot>
     <slot>voxel()</slot>
    </slots>
   </customwidget>
@@ -654,21 +675,8 @@
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>actionVoxel</sender>
-   <signal>triggered()</signal>
-   <receiver>widget</receiver>
-   <slot>voxel()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>250</x>
-     <y>179</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
+ <slots>
+  <slot>PVoxel()</slot>
+ </slots>
 </ui>
