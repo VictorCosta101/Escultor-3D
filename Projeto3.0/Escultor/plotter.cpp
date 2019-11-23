@@ -9,6 +9,8 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
 {
     s = new Sculptor(20,10,10);
 
+   fig=1;
+
 }
 
 void Plotter::paintEvent(QPaintEvent *event)
@@ -19,8 +21,7 @@ void Plotter::paintEvent(QPaintEvent *event)
 
     int dx = 0, dy =0;
 
-    cx = 0;
-    cy = 0;
+
 
     tam1 = width()/20;
     tam2 = height()/10;
@@ -32,6 +33,7 @@ void Plotter::paintEvent(QPaintEvent *event)
 
     painter.setBrush(brush);
     painter.setPen(pen);
+    s->putVoxel(10,5,5);
     //Cria a matrtiz
     for(int i = 0; i < 20; i++)
     {
@@ -50,54 +52,59 @@ void Plotter::paintEvent(QPaintEvent *event)
     painter.drawRect(10*tam1, 5*tam2,tam1,tam2);
 */
 
-   p.clear();
+
 
    p=s->readM();
-
-    for( int i = 0; i < p.size(); i++)
+if(p[10][5][5].isOn)
+{
+    cout<<"true"<<endl;
+}
+    for( int i = 0; i < 20; i++)
     {
 
-        for(int j = 0; j < p[0].size(); j++)
+        for(int j = 0; j < 10; j++)
         {
 
-            if(p[i][j].isOn)
+            if(p[i][j][5].isOn)
             {
 
-               cout<<"ok"<<endl;
                 brush.setColor(QColor(0,255,0));
                     brush.setStyle(Qt::SolidPattern);
                     painter.setBrush(brush);
 
-                    painter.drawRect(cx*tam1, cy*tam2,tam1,tam2);
+                    painter.drawRect(cx*tam1,cy*tam2,tam1,tam2);
             }
         }
     }
+    cout<<"teste de repetição: "<<cx<<endl;
 
 }
 
 void Plotter::mousePressEvent(QMouseEvent *event)
 {
 
-    Sculptor *b;
+
 
 if(event->button() ==Qt::LeftButton){
 int x, y;
+
     x = event->x();
     y = event->y();
 
     mx=x;
     my=y;
-    cx=(mx/tam1)+1;
-    cy=(my/tam2)+1;
+    cx=(mx/tam1);
+    cy=(my/tam2);
 
     emit mouseX(x);
     emit mouseY(y);
 
 
-    cout<<"ok"<<endl;
-cout<<mx<<" "<<my<<endl;
-cout<<"PX = "<<cx<<" "<<" PY = "<<cy<<endl;
 
+
+cout<<"PX = "<<(cx+1)<<" "<<" PY = "<<(cy+1)<<endl;
+Plotter::Forma(fig);
+repaint();
 }
 }
 
@@ -115,13 +122,17 @@ void Plotter::Forma(int f)
     if ( f == 2)
     {
         s->putVoxel(cx,cy,5);
+        cout<<"forma funciona"<<endl;
     }
+
 }
 
-void Plotter::pVoxel()
+void Plotter::informForma(int a)
 {
-    forma = 2;
-    cout<<"pVoxel"<<endl;
+  fig = a;
+  cout <<"forma = "<<fig<<endl;
+
 }
+
 
 

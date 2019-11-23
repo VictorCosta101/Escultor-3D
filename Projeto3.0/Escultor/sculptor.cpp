@@ -60,6 +60,7 @@ void Sculptor::putVoxel(int x, int y, int z)
     /*
      * /Ativa cada Voxel e o atribui uma cor
 */
+
     if(x < nx && y < ny && z < nz)
     {
         v[x][y][z].isOn=true;
@@ -72,6 +73,7 @@ void Sculptor::putVoxel(int x, int y, int z)
         cout<<" Dimessoes erradas"<<endl;
         exit(1);
     }
+
 }
 
 
@@ -311,29 +313,40 @@ void Sculptor::writeOFF(string filename)
         objeto.close();
 }
 
-vector<vector<Voxel>> Sculptor::readM()
+vector<vector<vector<Voxel>>> Sculptor::readM()
 {
 
-    vector<vector<Voxel>> m;
-    vector<Voxel> l;
+
+    vector<vector<vector<Voxel>>> l;
+
     l.resize(20);
+    for (int i = 0; i < 20; i++)
+    {
+        l[i].resize(10);
+
+        for (int j = 0; j < 10; j++)
+        {
+           l[i][j].resize(1);
+        }
+    }
 
     for(int i = 0; i < 20; i++)
     {
+
         for(int j = 0 ; j < 10; j++)
         {
-            l[j].isOn = v[i][j][5].isOn;
-            l[j].r    = v[i][j][5].r;
-            l[j].g    = v[i][j][5].g;
-            l[j].b    = v[i][j][5].b;
+            l[i][j][5].isOn = v[i][j][5].isOn;
+            l[i][j][5].r    = v[i][j][5].r;
+            l[i][j][5].g    = v[i][j][5].g;
+            l[i][j][5].b    = v[i][j][5].b;
         }
 
-        m.push_back(l);
+
 
     }
-    l.clear();
 
-    return m;
+
+    return l;
 }
 
 

@@ -677,6 +677,6 @@
   </connection>
  </connections>
  <slots>
-  <slot>PVoxel()</slot>
+  <slot>pVoxel()</slot>
  </slots>
 </ui>

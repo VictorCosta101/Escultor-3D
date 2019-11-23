@@ -11,12 +11,12 @@ class Plotter : public QWidget
 public:
 
     Sculptor *s;
-
+    int fig = 1;
 
     //mouse
     int mx,my,cx,cy;
 
-    int forma = 1;
+
     int tam1, tam2;
 
 
@@ -26,15 +26,16 @@ public:
     void mouseMoveEvent(QMouseEvent *event);
 
     void Forma(int);
+    void informForma(int);
 
 private:
-    vector<vector<Voxel>> p;
+    vector<vector<vector<Voxel>>> p;
 
 signals:
 void mouseX(int);
 void mouseY(int);
 public slots:
-void pVoxel();
+
 
 
 };

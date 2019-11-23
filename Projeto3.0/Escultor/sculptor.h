@@ -42,7 +42,7 @@ public:
   // Cria uma aquivo OFF com as informações do objeto criado
   void writeOFF(string filename);
 
- vector<vector<Voxel>> readM();
+ vector<vector<vector<Voxel>>> readM();
   int recR(int x, int y , int z);
   int recG(int x, int y , int z);
   int recB(int x, int y , int z);
