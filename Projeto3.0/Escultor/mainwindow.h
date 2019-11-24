@@ -19,7 +19,7 @@ public:
 
 public slots:
 void pVoxel();
-
+void pSphere();
 
 private:
     Ui::MainWindow *ui;

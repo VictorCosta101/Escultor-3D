@@ -26,10 +26,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::pVoxel()
 {
-    Plotter p;
-    p.informForma(2);
-    cout<<"funciona aqui forma"<<endl;
+   ui->widget->fig=2;
+    cout<<"pVoxel exe"<<endl;
 
+}
+
+void MainWindow::pSphere()
+{
+ ui->widget->fig=3;
 }
 
 

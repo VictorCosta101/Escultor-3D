@@ -9,7 +9,6 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
 {
     s = new Sculptor(20,10,10);
 
-   fig=1;
 
 }
 
@@ -33,8 +32,9 @@ void Plotter::paintEvent(QPaintEvent *event)
 
     painter.setBrush(brush);
     painter.setPen(pen);
-    s->putVoxel(10,5,5);
+
     //Cria a matrtiz
+
     for(int i = 0; i < 20; i++)
     {
         for(int j = 0; j < 10 ; j++)
@@ -53,7 +53,7 @@ void Plotter::paintEvent(QPaintEvent *event)
 */
 
 
-
+p.clear();
    p=s->readM();
 if(p[10][5][5].isOn)
 {
@@ -102,10 +102,12 @@ int x, y;
 
 
 
-cout<<"PX = "<<(cx+1)<<" "<<" PY = "<<(cy+1)<<endl;
+cout<<"PX = "<<(cx+1)<<" "<<" PY = "<<(cy+1)<<" "<<" fig* = "<<fig <<endl;
 Plotter::Forma(fig);
-repaint();
+cout<<"forma(fig) e chamada)"<<endl;
+
 }
+
 }
 
 void Plotter::mouseMoveEvent(QMouseEvent *event)
@@ -119,20 +121,22 @@ void Plotter::mouseMoveEvent(QMouseEvent *event)
 
 void Plotter::Forma(int f)
 {
+    cout<<"testeforma"<<endl;
+    cout<<"f = "<<f<<endl<<"fig = "<<fig<<endl;
     if ( f == 2)
     {
-        s->putVoxel(cx,cy,5);
         cout<<"forma funciona"<<endl;
+        s->putVoxel(cx,cy,5);
+
     }
-
+    if(f == 3)
+    {
+        s->putSphere(cx,cy,5,7);
+    }
+    repaint();
 }
 
-void Plotter::informForma(int a)
-{
-  fig = a;
-  cout <<"forma = "<<fig<<endl;
 
-}
 
 
 
