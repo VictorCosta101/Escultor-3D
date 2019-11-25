@@ -20,8 +20,29 @@ MainWindow::MainWindow(QWidget *parent) :
             ui->widget,
             &Plotter::returnB);
 
-
+    connect(ui->horizontalSliderDim,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDim);
+    connect(ui->EsferaR,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaRaioSphere);
+    connect(ui->dimX,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDimX);
+    connect(ui->dimY,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDimY);
+    connect(ui->dimZ,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDimZ);
 }
+
+
 
 MainWindow::~MainWindow()
 {

@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
+#include "plotter.h"
 using namespace  std;
 
 /* classe Sculptor
@@ -99,7 +100,7 @@ void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1)
                     putVoxel(i,j,k);
             }
         }
-        cout<<"putBoxTeste"<<endl;
+
     }
 }
 
@@ -336,22 +337,23 @@ void Sculptor::writeOFF(string filename)
 vector<vector<vector<Voxel>>> Sculptor::copyM(int z)
 {
     vector<vector<vector<Voxel>>> m;
+    Plotter g;
 
-    m.resize(20);
-    for(int i = 0; i < 20; i++)
+    m.resize(g.dimX);
+    for(int i = 0; i < g.dimX; i++)
     {
-        m[i].resize(10);
-        for(int j = 0; j < 10; j++)
+        m[i].resize(g.dimY);
+        for(int j = 0; j < g.dimY; j++)
         {
-            m[i][j].resize(10);
+            m[i][j].resize(g.dimZ);
         }
     }
 
 
 
-    for(int i = 0 ; i < 20;  i ++)
+    for(int i = 0 ; i < g.dimX;  i ++)
     {
-        for(int j = 0; j < 10; j++)
+        for(int j = 0; j < g.dimY; j++)
         {
             m[i][j][z].isOn = v[i][j][z].isOn;
             m[i][j][z].r = v[i][j][z].r;

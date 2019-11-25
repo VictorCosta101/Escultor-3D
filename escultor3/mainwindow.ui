@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>480</width>
-    <height>366</height>
+    <width>777</width>
+    <height>543</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,18 +17,18 @@
    <widget class="Plotter" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>30</y>
-      <width>271</width>
-      <height>181</height>
+      <x>10</x>
+      <y>10</y>
+      <width>541</width>
+      <height>321</height>
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>210</y>
+      <x>660</x>
+      <y>390</y>
       <width>105</width>
       <height>78</height>
      </rect>
@@ -87,13 +87,173 @@
      </item>
     </layout>
    </widget>
+   <widget class="QSlider" name="horizontalSliderDim">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>551</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>9</number>
+    </property>
+    <property name="sliderPosition">
+     <number>5</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>340</y>
+      <width>561</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>-10</y>
+      <width>20</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>230</y>
+      <width>174</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>                        Esfera</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string> R</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSlider" name="EsferaR">
+         <property name="maximum">
+          <number>10</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLCDNumber" name="lcdNumber"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>380</y>
+      <width>168</width>
+      <height>83</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_4">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>X</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSlider" name="dimX">
+       <property name="sliderPosition">
+        <number>21</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLCDNumber" name="lcdNumber_2"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSlider" name="dimY">
+       <property name="sliderPosition">
+        <number>11</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLCDNumber" name="lcdNumber_3"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Z</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QSlider" name="dimZ">
+       <property name="sliderPosition">
+        <number>11</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLCDNumber" name="lcdNumber_4"/>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>480</width>
+     <width>777</width>
      <height>20</height>
     </rect>
    </property>
@@ -295,6 +455,70 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>EsferaR</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>654</x>
+     <y>312</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>717</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dimX</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_2</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>442</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dimY</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_3</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>472</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>129</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dimZ</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_4</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>501</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>128</x>
+     <y>501</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>pVoxel()</slot>
@@ -305,5 +529,6 @@
   <slot>cBox()</slot>
   <slot>pEllipsoid()</slot>
   <slot>cEllipsoid()</slot>
+  <slot>novaMatriz()</slot>
  </slots>
 </ui>

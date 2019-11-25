@@ -33,9 +33,17 @@ public:
     // variaveis do plotter:
 
     int tamX, tamY;
+    int dim;
+    int dimX,dimY,dimZ;
 
     // coordenadas do mouse
     int mx, my;
+
+    //variaveis dos objetos
+
+    //Sphere
+
+    int r;
 
 
 signals:
@@ -46,6 +54,12 @@ public slots:
     void returnR(int _r);
     void returnG(int _g);
     void returnB(int _b);
+    void modificaDim(int _dim);
+    void modificaRaioSphere(int _R);
+    void modificaDimX(int _x);
+    void modificaDimY(int _y);
+    void modificaDimZ(int _z);
+
 
 };
 
