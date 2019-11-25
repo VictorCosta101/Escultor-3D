@@ -28,12 +28,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         plotter.cpp \
-        sculptor.cpp
+        sculptor.cpp \
+    plottercor.cpp
 
 HEADERS += \
         mainwindow.h \
         plotter.h \
-        sculptor.h
+        sculptor.h \
+    plottercor.h
 
 FORMS += \
         mainwindow.ui

@@ -28,20 +28,22 @@ MainWindow::MainWindow(QWidget *parent) :
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaRaioSphere);
-    connect(ui->dimX,
+    connect(ui->Dimx,
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaDimX);
-    connect(ui->dimY,
-            &QAbstractSlider::valueChanged,
-            ui->widget,
-            &Plotter::modificaDimY);
-    connect(ui->dimZ,
-            &QAbstractSlider::valueChanged,
+    connect(ui->DimY,
+             &QAbstractSlider::valueChanged,
+             ui->widget,
+             &Plotter::modificaDimY
+             );
+    connect(ui->dimZ,&QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaDimZ);
-}
 
+  //mudar as dim do plano
+    connect(ui->pushButtonNova,&QPushButton::clicked,ui->widget,&Plotter::criarNovaMatriz);
+}
 
 
 MainWindow::~MainWindow()

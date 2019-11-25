@@ -14,6 +14,7 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
 
     dim = 5;
 
+    teste = false;
     // variaveis dos objetos
 
     r = 5;
@@ -52,9 +53,9 @@ void Plotter::paintEvent(QPaintEvent *event)
 
     // plotar os Voxels ativos
 
-    for( int i = 0 ; i < 20; i++)
+    for( int i = 0 ; i < dimX; i++)
     {
-        for(int j = 0 ; j < 10; j++)
+        for(int j = 0 ; j < dimY; j++)
         {
             if(p[i][j][dim].isOn){
                 cout<<"i = "<<i<<" // j = "<<j<<endl;
@@ -119,12 +120,12 @@ void Plotter::criarObjeto(int ob)
     if( ob == 5)
     {
         v->setColor(pr,pg,pb,1.0);
-        v->putBox(mx,mx+5,my,my+5,dim,dim+10);
+        v->putBox(mx,mx+5,my,my+5,dim,dim+5);
     }
     if(ob  == 6)
     {
         v->setColor(pr,pg,pb,1.0);
-        v->cutBox(mx,mx+5,my,my+5,dim,dim+10);
+        v->cutBox(mx,mx+5,my,my+5,dim,dim+5);
     }
     if(ob == 7 )
     {
@@ -140,19 +141,31 @@ void Plotter::criarObjeto(int ob)
     repaint();
 }
 
+
+
 void Plotter::returnR(int _r)
 {
+    PlotterCor cor;
     pr = _r;
+    cor.r =_r;
+    cor.repaint();
+
 }
 
 void Plotter::returnG(int _g)
 {
+     PlotterCor cor;
     pg = _g;
+    cor.g=_g;
+    cor.repaint();
 }
 
 void Plotter::returnB(int _b)
 {
+     PlotterCor cor;
     pb = _b;
+    cor.b = _b;
+    cor.repaint();
 }
 
 void Plotter::modificaDim(int _dim)
@@ -169,30 +182,42 @@ void Plotter::modificaRaioSphere(int _R)
 
 void Plotter::modificaDimX(int _x)
 {
+    if(teste){
     dimX = _x;
 
-    delete v;
-    v = nullptr;
-    v = new Sculptor(dimX,dimY,dimZ);
+
     repaint();
+    }
 }
 
 void Plotter::modificaDimY(int _y)
 {
+    if(teste){
     dimY = _y;
-    delete v;
-    v = nullptr;
-    v = new Sculptor(dimX,dimY,dimZ);
-    repaint();
+    repaint();}
 }
 
 void Plotter::modificaDimZ(int _z)
 {
+    if(teste){
     dimZ = _z;
-    delete v;
-    v = nullptr;
+
+    repaint();}
+}
+
+void Plotter::criarNovaMatriz()
+{
+
     v = new Sculptor(dimX,dimY,dimZ);
+    teste =true;
     repaint();
+}
+
+void Plotter::deletarMatriz()
+{
+    delete v;
+    v = 0;
+    v = new Sculptor(21,11,11);
 }
 
 
