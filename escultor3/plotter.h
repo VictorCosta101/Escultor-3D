@@ -63,6 +63,8 @@ public slots:
     void modificaDimY(int _y);
     void modificaDimZ(int _z);
     void criarNovaMatriz();
+    void deletarMatriz();
+    //void deletarMatriz();
 
 
 };

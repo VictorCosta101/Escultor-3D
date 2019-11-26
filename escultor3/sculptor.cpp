@@ -17,7 +17,9 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz)
 {
     /* * /metodo Sculptor faz a alocacao dinamica da matriz que recebera os Voxels*/
     nx = _nx; ny= _ny; nz= _nz;
-
+    cout<<"nx = "<<nx<<endl;
+    cout<<"ny = "<<ny<<endl;
+    cout<<"nz = "<<nz<<endl;
     v = new Voxel**[_nx]();
     for(int i = 0; i < _nx;i++)
     {
@@ -26,6 +28,7 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz)
             v[i][j]= new Voxel [_nz]();
         }
     }
+    cout<<"OK1 "<<endl;
 }
 
 

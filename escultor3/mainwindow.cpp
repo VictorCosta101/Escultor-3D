@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    // mudar cores
     connect(ui->horizontalSliderR,
             &QAbstractSlider::valueChanged,
             ui->widget,
@@ -20,29 +20,54 @@ MainWindow::MainWindow(QWidget *parent) :
             ui->widget,
             &Plotter::returnB);
 
+    connect(ui->horizontalSliderR,
+            &QAbstractSlider::valueChanged,
+            ui->widgetCor,
+            &PlotterCor::returnR);
+    connect(ui->horizontalSliderG,
+            &QAbstractSlider::valueChanged,
+            ui->widgetCor,
+            &PlotterCor::returnG);
+    connect(ui->horizontalSliderB,
+            &QAbstractSlider::valueChanged,
+            ui->widgetCor,
+            &PlotterCor::returnB);
+
+    // mudar dimensoes
     connect(ui->horizontalSliderDim,
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaDim);
-    connect(ui->EsferaR,
-            &QAbstractSlider::valueChanged,
-            ui->widget,
-            &Plotter::modificaRaioSphere);
     connect(ui->Dimx,
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaDimX);
     connect(ui->DimY,
-             &QAbstractSlider::valueChanged,
-             ui->widget,
-             &Plotter::modificaDimY
-             );
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDimY
+            );
     connect(ui->dimZ,&QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaDimZ);
 
-  //mudar as dim do plano
-    connect(ui->pushButtonNova,&QPushButton::clicked,ui->widget,&Plotter::criarNovaMatriz);
+    //Dimensoes da esfera
+
+    connect(ui->EsferaR,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaRaioSphere);
+
+
+    //mudar as dim do plano
+    connect(ui->pushButtonNova,
+            &QPushButton::clicked,
+            ui->widget,
+            &Plotter::criarNovaMatriz);
+    connect(ui->pushButtonDelete,
+            &QPushButton::clicked,
+            ui->widget,
+           &Plotter::deletarMatriz );
 }
 
 

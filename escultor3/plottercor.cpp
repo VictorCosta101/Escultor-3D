@@ -5,7 +5,7 @@
 #include "plotter.h"
 PlotterCor::PlotterCor(QWidget *parent) : QWidget(parent)
 {
-
+    r = 255; g = 255; b = 255;
 }
 
 void PlotterCor::paintEvent(QPaintEvent *event)
@@ -15,7 +15,8 @@ void PlotterCor::paintEvent(QPaintEvent *event)
     QBrush brush;
     Plotter p;
 
-    brush.setColor(QColor(p.pr,p.pg,p.pb));
+
+    brush.setColor(QColor(r,g,b));
     brush.setStyle(Qt::SolidPattern);
 
     pen.setColor(QColor(0,0,0));
@@ -31,4 +32,23 @@ void PlotterCor::paintEvent(QPaintEvent *event)
 
      painter.drawRect(0,0,width(),height());
 
+}
+
+void PlotterCor::returnR(int _r)
+{
+
+    r = _r;
+    repaint();
+}
+
+void PlotterCor::returnG(int _g)
+{
+    g = _g;
+    repaint();
+}
+
+void PlotterCor::returnB(int _b)
+{
+    b = _b;
+    repaint();
 }

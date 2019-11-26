@@ -52,13 +52,14 @@ void Plotter::paintEvent(QPaintEvent *event)
     p = v->copyM(dim);
 
     // plotar os Voxels ativos
+    cout<<"Plotter pr : "<<pr<<endl;
 
     for( int i = 0 ; i < dimX; i++)
     {
         for(int j = 0 ; j < dimY; j++)
         {
             if(p[i][j][dim].isOn){
-                cout<<"i = "<<i<<" // j = "<<j<<endl;
+
 
                 pen.setColor(QColor(0,0,0));
                 //pen.setWidth(2);
@@ -145,27 +146,25 @@ void Plotter::criarObjeto(int ob)
 
 void Plotter::returnR(int _r)
 {
-    PlotterCor cor;
+
     pr = _r;
-    cor.r =_r;
-    cor.repaint();
+
+
 
 }
 
 void Plotter::returnG(int _g)
 {
-     PlotterCor cor;
+
     pg = _g;
-    cor.g=_g;
-    cor.repaint();
+    repaint();
 }
 
 void Plotter::returnB(int _b)
 {
-     PlotterCor cor;
+
     pb = _b;
-    cor.b = _b;
-    cor.repaint();
+    repaint();
 }
 
 void Plotter::modificaDim(int _dim)
@@ -182,43 +181,49 @@ void Plotter::modificaRaioSphere(int _R)
 
 void Plotter::modificaDimX(int _x)
 {
-    if(teste){
+
     dimX = _x;
 
 
-    repaint();
-    }
+
 }
 
 void Plotter::modificaDimY(int _y)
 {
-    if(teste){
+
     dimY = _y;
-    repaint();}
+
 }
 
 void Plotter::modificaDimZ(int _z)
 {
-    if(teste){
+
     dimZ = _z;
 
-    repaint();}
+
 }
 
 void Plotter::criarNovaMatriz()
 {
+   cout<<"DimX = "<<dimX<<endl;
+   cout<<"DimY = "<<dimY<<endl;
+   cout<<"DimZ = "<<dimZ<<endl;
 
+    if(teste){
     v = new Sculptor(dimX,dimY,dimZ);
-    teste =true;
-    repaint();
+    cout<<"teste1950"<<endl;
+   // repaint();
+    }
 }
 
 void Plotter::deletarMatriz()
 {
-    delete v;
-    v = 0;
-    v = new Sculptor(21,11,11);
+    v->~Sculptor();
+    teste =true;
 }
+
+
+
 
 
 

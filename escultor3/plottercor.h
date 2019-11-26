@@ -18,6 +18,9 @@ public:
 signals:
 
 public slots:
+    void returnR(int);
+    void returnG(int);
+    void returnB(int);
 };
 
 #endif // PLOTTERCOR_H

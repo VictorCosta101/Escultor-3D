@@ -246,6 +246,19 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButtonDelete">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>450</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -253,7 +266,7 @@
      <x>0</x>
      <y>0</y>
      <width>777</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
@@ -320,8 +333,13 @@
   <customwidget>
    <class>Plotter</class>
    <extends>QWidget</extends>
-   <header>plotter.h</header>
+   <header location="global">plotter.h</header>
    <container>1</container>
+   <slots>
+    <slot>setAmplitude(int)</slot>
+    <slot>slot1()</slot>
+    <slot>exibeCorSelecionada(int)</slot>
+   </slots>
   </customwidget>
   <customwidget>
    <class>PlotterCor</class>
