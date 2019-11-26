@@ -6,47 +6,59 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     // mudar cores
+
     connect(ui->horizontalSliderR,
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::returnR);
+
     connect(ui->horizontalSliderG,
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::returnG);
+
     connect(ui->horizontalSliderB,
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::returnB);
 
+    // mudar cor (width 2)
+
     connect(ui->horizontalSliderR,
             &QAbstractSlider::valueChanged,
             ui->widgetCor,
             &PlotterCor::returnR);
+
     connect(ui->horizontalSliderG,
             &QAbstractSlider::valueChanged,
             ui->widgetCor,
             &PlotterCor::returnG);
+
     connect(ui->horizontalSliderB,
             &QAbstractSlider::valueChanged,
             ui->widgetCor,
             &PlotterCor::returnB);
 
     // mudar dimensoes
+
     connect(ui->horizontalSliderDim,
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaDim);
+
     connect(ui->Dimx,
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaDimX);
+
     connect(ui->DimY,
             &QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaDimY
             );
+
     connect(ui->dimZ,&QAbstractSlider::valueChanged,
             ui->widget,
             &Plotter::modificaDimZ);
@@ -58,16 +70,54 @@ MainWindow::MainWindow(QWidget *parent) :
             ui->widget,
             &Plotter::modificaRaioSphere);
 
+    //Dimensões do box
+
+    connect(ui->horizontalSliderBoxX,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaBoxX);
+
+    connect(ui->horizontalSliderBoxY,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaBoxY);
+
+    connect(ui->horizontalSliderBoxZ,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaBoxZ);
+
+    //Dimensões do ellipsoid
+
+    connect(ui->horizontalSliderElliX,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaElliRx);
+
+    connect(ui->horizontalSliderElliY,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaElliRy);
+
+    connect(ui->horizontalSliderElliZ,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaElliRz);
+
 
     //mudar as dim do plano
+
     connect(ui->pushButtonNova,
             &QPushButton::clicked,
             ui->widget,
             &Plotter::criarNovaMatriz);
+
     connect(ui->pushButtonDelete,
             &QPushButton::clicked,
             ui->widget,
            &Plotter::deletarMatriz );
+
+
 }
 
 
@@ -114,6 +164,11 @@ void MainWindow::pEllipsoid()
 void MainWindow::cEllipsoid()
 {
     ui->widget->fig=8;
+}
+
+void MainWindow::salvar()
+{
+
 }
 
 

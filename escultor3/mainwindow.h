@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <string>
 
 namespace Ui {
 class MainWindow;
@@ -25,7 +26,9 @@ public slots:
     void pEllipsoid();
     void cEllipsoid();
 
-    //cores
+    //Salvar e abrir arquivos
+    void salvar();
+
 
 
 private:

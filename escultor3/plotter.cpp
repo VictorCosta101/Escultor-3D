@@ -121,7 +121,7 @@ void Plotter::criarObjeto(int ob)
     if( ob == 5)
     {
         v->setColor(pr,pg,pb,1.0);
-        v->putBox(mx,mx+5,my,my+5,dim,dim+5);
+        v->putBox(mx,mx+bx,my,my+by,dim,dim+bz);
     }
     if(ob  == 6)
     {
@@ -220,6 +220,48 @@ void Plotter::deletarMatriz()
 {
     v->~Sculptor();
     teste =true;
+}
+
+void Plotter::modificaBoxX(int _x)
+{
+    bx = _x;
+    repaint();
+}
+
+void Plotter::modificaBoxY(int _y)
+{
+    by = _y;
+    repaint();
+}
+
+void Plotter::modificaBoxZ(int _z)
+{
+    bz = _z;
+    repaint();
+}
+
+void Plotter::modificaElliRx(int _x)
+{
+    erx = _x;
+    repaint();
+}
+
+void Plotter::modificaElliRy(int _y)
+{
+    ery = _y;
+    repaint();
+}
+
+void Plotter::modificaElliRz(int _z)
+{
+    erz = _z;
+    repaint();
+}
+
+void Plotter::salvar(string a)
+{
+
+    v->writeOFF(a);
 }
 
 

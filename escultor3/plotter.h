@@ -7,6 +7,7 @@
 #include "plottercor.h"
 #include <vector>
 #include <QMouseEvent>
+#include <string>
 
 
 class Plotter : public QWidget
@@ -24,9 +25,14 @@ public:
 
     Sculptor *v;
 
+    // matriz que recebe a matriz de voxels do scultor no plotter
+
     vector<vector<vector<Voxel>>>p;
 
+    // figuras
+
     int fig;
+
     //cores
 
     int pr,pg,pb;
@@ -39,6 +45,7 @@ public:
     int dimX,dimY,dimZ;
 
     // coordenadas do mouse
+
     int mx, my;
 
     //variaveis dos objetos
@@ -48,23 +55,55 @@ public:
     int r;
     bool teste;
 
+    //Box
+
+    int bx,by,bz;
+
+    //Ellipsoid
+
+    int erx, ery, erz;
 
 signals:
     void mouseX(int);
     void mouseY(int);
 
 public slots:
+    // cores dos voxels widget_1
+
     void returnR(int _r);
     void returnG(int _g);
     void returnB(int _b);
+
+    // dimensões da matriz de voxels
+
     void modificaDim(int _dim);
-    void modificaRaioSphere(int _R);
     void modificaDimX(int _x);
     void modificaDimY(int _y);
     void modificaDimZ(int _z);
+
+    // deletar e criar matriz de voxels
+
     void criarNovaMatriz();
     void deletarMatriz();
-    //void deletarMatriz();
+
+    //dimensões da esfera
+
+    void modificaRaioSphere(int _R);
+
+    //dimensões do box
+
+    void modificaBoxX(int);
+    void modificaBoxY(int);
+    void modificaBoxZ(int);
+
+    //dimensoes do ellipsoid
+
+    void modificaElliRx(int);
+    void modificaElliRy(int);
+    void modificaElliRz(int);
+
+
+
 
 
 };
