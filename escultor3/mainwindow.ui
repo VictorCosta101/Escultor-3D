@@ -167,7 +167,7 @@
           <number>1</number>
          </property>
          <property name="maximum">
-          <number>10</number>
+          <number>99</number>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -190,85 +190,6 @@
       <height>80</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>160</y>
-      <width>171</width>
-      <height>102</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout_4">
-     <item row="0" column="0" colspan="3">
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string>                           Box</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string> X</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QSlider" name="horizontalSliderBoxX">
-       <property name="minimum">
-        <number>1</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QLCDNumber" name="lcdNumber_4"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string> Y</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QSlider" name="horizontalSliderBoxY">
-       <property name="minimum">
-        <number>1</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QLCDNumber" name="lcdNumber_3"/>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string> Z</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QSlider" name="horizontalSliderBoxZ">
-       <property name="minimum">
-        <number>1</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QLCDNumber" name="lcdNumber_2"/>
-     </item>
-    </layout>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -349,6 +270,95 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLCDNumber" name="lcdNumber_8">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>360</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>161</y>
+      <width>171</width>
+      <height>102</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_4">
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>                           Box</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string> X</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSlider" name="horizontalSliderBoxX">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLCDNumber" name="lcdNumber_4"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string> Y</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QSlider" name="horizontalSliderBoxY">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLCDNumber" name="lcdNumber_3"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string> Z</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSlider" name="horizontalSliderBoxZ">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLCDNumber" name="lcdNumber_2"/>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -364,7 +374,6 @@
      <string>File</string>
     </property>
     <addaction name="actionSalvar"/>
-    <addaction name="actionAbrir"/>
     <addaction name="actionabrirNovaCanvas"/>
    </widget>
    <addaction name="menuFile"/>
@@ -387,56 +396,91 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionVoxel">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/Voxel.png</normaloff>:/icons/imagens/Voxel.png</iconset>
+   </property>
    <property name="text">
     <string>Voxel</string>
    </property>
   </action>
   <action name="actionApagar">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/cVoxel.png</normaloff>:/icons/imagens/cVoxel.png</iconset>
+   </property>
    <property name="text">
     <string>Apagar</string>
    </property>
   </action>
   <action name="actionEsfera">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/esfera.png</normaloff>:/icons/imagens/esfera.png</iconset>
+   </property>
    <property name="text">
     <string>Esfera</string>
    </property>
   </action>
   <action name="actioncutEsfera">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/cEsfera.png</normaloff>:/icons/imagens/cEsfera.png</iconset>
+   </property>
    <property name="text">
     <string>cutEsfera</string>
    </property>
   </action>
   <action name="actionBox">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/box.png</normaloff>:/icons/imagens/box.png</iconset>
+   </property>
    <property name="text">
     <string>Box</string>
    </property>
   </action>
   <action name="actioncutBox">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/cBox.png</normaloff>:/icons/imagens/cBox.png</iconset>
+   </property>
    <property name="text">
     <string>cutBox</string>
    </property>
   </action>
   <action name="actionEllipsoid">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/ellipsoid.png</normaloff>:/icons/imagens/ellipsoid.png</iconset>
+   </property>
    <property name="text">
     <string>Ellipsoid</string>
    </property>
   </action>
   <action name="actioncutEllipsoid">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/cEllipsoid.png</normaloff>:/icons/imagens/cEllipsoid.png</iconset>
+   </property>
    <property name="text">
     <string>cutEllipsoid</string>
    </property>
   </action>
   <action name="actionSalvar">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/save.png</normaloff>:/icons/imagens/save.png</iconset>
+   </property>
    <property name="text">
     <string>Salvar</string>
    </property>
   </action>
-  <action name="actionAbrir">
-   <property name="text">
-    <string>Abrir</string>
-   </property>
-  </action>
   <action name="actionabrirNovaCanvas">
+   <property name="icon">
+    <iconset resource="imagens.qrc">
+     <normaloff>:/icons/imagens/new.png</normaloff>:/icons/imagens/new.png</iconset>
+   </property>
    <property name="text">
     <string>abrirNovaCanvas</string>
    </property>
@@ -462,7 +506,9 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="imagens.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>actionVoxel</sender>
@@ -701,6 +747,22 @@
     <hint type="destinationlabel">
      <x>702</x>
      <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderDim</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_8</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>557</x>
+     <y>414</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>582</x>
+     <y>415</y>
     </hint>
    </hints>
   </connection>

@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['main_27',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_28',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainwindow_29',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()']]],
+  ['mainwindow_2ecpp_30',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
+  ['mainwindow_2eh_31',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
+  ['modificaboxx_32',['modificaBoxX',['../class_plotter.html#acdd6f013e9b8351f867ebf1aeda4ad84',1,'Plotter']]],
+  ['modificaboxy_33',['modificaBoxY',['../class_plotter.html#aa38d1a85d4a28856e2648af315405e11',1,'Plotter']]],
+  ['modificaboxz_34',['modificaBoxZ',['../class_plotter.html#a0168f71452c51d6e8111d5f4f9f5c7c2',1,'Plotter']]],
+  ['modificadim_35',['modificaDim',['../class_plotter.html#acb55153dc0a2677893d6efd99d58dd94',1,'Plotter']]],
+  ['modificadimx_36',['modificaDimX',['../class_plotter.html#a8b330e8d7662bde2565bd2b3dc23361a',1,'Plotter']]],
+  ['modificadimy_37',['modificaDimY',['../class_plotter.html#a68677f79a1c26990411356fd9556ec55',1,'Plotter']]],
+  ['modificadimz_38',['modificaDimZ',['../class_plotter.html#a4d993cdf9bcad8431151e26806af8e9c',1,'Plotter']]],
+  ['modificaellirx_39',['modificaElliRx',['../class_plotter.html#a26cd94a56c4e4b103795d52c81986aba',1,'Plotter']]],
+  ['modificaelliry_40',['modificaElliRy',['../class_plotter.html#a11ac68ff872bd8087a43d46f7f1ec9df',1,'Plotter']]],
+  ['modificaellirz_41',['modificaElliRz',['../class_plotter.html#aaaeddcc77870213eeccc156ed9873153',1,'Plotter']]],
+  ['modificaraiosphere_42',['modificaRaioSphere',['../class_plotter.html#a98ed57390f76a3e74ca22e6974a375b3',1,'Plotter']]],
+  ['mousepressevent_43',['mousePressEvent',['../class_plotter.html#aac8dfc9c49d06ccf085973ceec6eb50c',1,'Plotter']]],
+  ['mousex_44',['mouseX',['../class_plotter.html#acc318f23eb9f135d13431c05221e1ee9',1,'Plotter']]],
+  ['mousey_45',['mouseY',['../class_plotter.html#ae66c4db3fec253319af537aa627d8f1b',1,'Plotter']]],
+  ['mx_46',['mx',['../class_plotter.html#ac8d4480ad892f09d7ba084f969a17de5',1,'Plotter']]],
+  ['my_47',['my',['../class_plotter.html#a745e53490cdc1c113fdf15c560c73a02',1,'Plotter']]]
+];

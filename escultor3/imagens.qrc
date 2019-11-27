@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>imagens/box.png</file>
+        <file>imagens/cEllipsoid.png</file>
+        <file>imagens/cEsfera.png</file>
+        <file>imagens/ellipsoid.png</file>
+        <file>imagens/esfera.png</file>
+        <file>imagens/cBox.png</file>
+        <file>imagens/cVoxel.png</file>
+        <file>imagens/Voxel.png</file>
+        <file>imagens/new.png</file>
+        <file>imagens/save.png</file>
+    </qresource>
+</RCC>

@@ -10,7 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
-
+    // valor maximo dos sliders
+    ui->horizontalSliderDim->setMinimum(1);
+    //ui->horizontalSliderDim->setMaximum(ui->widget->dimZ-1);
     // mudar cores
 
     connect(ui->horizontalSliderR,
@@ -47,10 +49,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // mudar dimensoes
 
-        connect(ui->horizontalSliderDim,
-                &QAbstractSlider::valueChanged,
-                ui->widget,
-                &Plotter::modificaDim);
+    connect(ui->horizontalSliderDim,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDim);
 
 
 
@@ -95,7 +97,7 @@ MainWindow::MainWindow(QWidget *parent) :
             ui->widget,
             &Plotter::modificaElliRz);
 
-   //Salvar desenho
+    //Salvar desenho
 
     connect(ui->actionSalvar,
             SIGNAL(triggered(bool)),
