@@ -25,7 +25,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    dialogdim.cpp \
         main.cpp \
         mainwindow.cpp \
         plotter.cpp \
@@ -33,17 +32,18 @@ SOURCES += \
     plottercor.cpp
 
 HEADERS += \
-    dialogdim.h \
         mainwindow.h \
         plotter.h \
         sculptor.h \
     plottercor.h
 
 FORMS += \
-        dialogdim.ui \
         mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    icones.qrc

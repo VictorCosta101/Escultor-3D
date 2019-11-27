@@ -26,14 +26,9 @@ public slots:
     void pEllipsoid();
     void cEllipsoid();
 
-    //
+    //Salvar e abrir arquivos
+    void salvar();
 
-    void novaDim();
-
-
-
-    // Caixas de dialogo
-    void abreDialogo(void);
 
 
 private:

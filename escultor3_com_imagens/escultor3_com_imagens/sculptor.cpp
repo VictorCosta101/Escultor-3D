@@ -300,7 +300,7 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 
 void Sculptor::writeOFF(string filename)
 {
-    cout<<"teste 2202"<<endl;
+
     ofstream objeto;
 
     int Nvert = 0;//variavel para o calculo de vertices
@@ -308,9 +308,9 @@ void Sculptor::writeOFF(string filename)
     int aux = 0; // variavel auxiliar
 
 
-    objeto.open("C:/Users/Victor/Desktop/testeObjeto/"+filename+".off"); // local onde o arquivo OFF fica armazenado
+    objeto.open("C:/Desktop"+filename+".off"); // local onde o arquivo OFF fica armazenado
 
-    // objeto.open("C:/Users/UFRNLAB/Desktop/"+filename+".off");
+   // objeto.open("C:/Users/UFRNLAB/Desktop/"+filename+".off");
 
     if(objeto.is_open())// teste se o arquivo foi criado e está aberto
     {
@@ -426,39 +426,36 @@ vector<vector<vector<Voxel>>> Sculptor::copyM(int z)
 {
     vector<vector<vector<Voxel>>> m;
 
+    Plotter g;
 
+    m.resize(g.dimX);
 
-
-    m.resize(nx);
-    for(int i = 0; i < nx; i++)
+    for(int i = 0; i < g.dimX; i++)
     {
+        m[i].resize(g.dimY);
 
-        m[i].resize(ny);
-
-        for(int j = 0; j < ny; j++)
+        for(int j = 0; j < g.dimY; j++)
         {
 
-            m[i][j].resize(nz);
-
-
+            m[i][j].resize(g.dimZ);
         }
     }
 
 
 
-    for(int i = 0 ; i < nx;  i ++)
+    for(int i = 0 ; i < g.dimX;  i ++)
     {
 
-        for(int j = 0; j < ny; j++)
+        for(int j = 0; j < g.dimY; j++)
         {
 
-                m[i][j][z].isOn = v[i][j][z].isOn;
-                m[i][j][z].r = v[i][j][z].r;
-                m[i][j][z].g= v[i][j][z].g;
-                m[i][j][z].b = v[i][j][z].b;
-
+            m[i][j][z].isOn = v[i][j][z].isOn;
+            m[i][j][z].r = v[i][j][z].r;
+            m[i][j][z].g= v[i][j][z].g;
+            m[i][j][z].b = v[i][j][z].b;
 
         }
     }
+
     return m;
 }

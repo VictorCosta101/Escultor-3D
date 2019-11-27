@@ -1,14 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "plotter.h"
-#include "dialogdim.h"
-
 MainWindow::MainWindow(QWidget *parent) :
-
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
 
     // mudar cores
@@ -47,12 +43,25 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // mudar dimensoes
 
-        connect(ui->horizontalSliderDim,
-                &QAbstractSlider::valueChanged,
-                ui->widget,
-                &Plotter::modificaDim);
+    connect(ui->horizontalSliderDim,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDim);
 
+    connect(ui->Dimx,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDimX);
 
+    connect(ui->DimY,
+            &QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDimY
+            );
+
+    connect(ui->dimZ,&QAbstractSlider::valueChanged,
+            ui->widget,
+            &Plotter::modificaDimZ);
 
     //Dimensoes da esfera
 
@@ -95,19 +104,19 @@ MainWindow::MainWindow(QWidget *parent) :
             ui->widget,
             &Plotter::modificaElliRz);
 
-   //Salvar desenho
 
-    connect(ui->actionSalvar,SIGNAL(clicked(bool)),ui->widget,SLOT(salvarDensenho()));
+    //mudar as dim do plano
 
+    connect(ui->pushButtonNova,
+            &QPushButton::clicked,
+            ui->widget,
+            &Plotter::criarNovaMatriz);
 
+    connect(ui->pushButtonDelete,
+            &QPushButton::clicked,
+            ui->widget,
+           &Plotter::deletarMatriz );
 
-
-    // caixa de dialogo
-
-    connect(ui->actionabrirNovaCanvas,
-            SIGNAL(triggered(bool)),
-            this,
-            SLOT(novaDim()));
 
 }
 
@@ -157,43 +166,8 @@ void MainWindow::cEllipsoid()
     ui->widget->fig=8;
 }
 
-void MainWindow::novaDim()
+void MainWindow::salvar()
 {
-    DialogDim g;
-
-    int cx, cy, cz;
-
-    bool g1, g2, g3;
-
-    QString lx, ly, lz;
-    if(g.exec()==QDialog::Accepted)
-    {
-
-        lx = g.readDimX();
-        ly = g.readDimY();
-        lz = g.readDimZ();
-
-        cx = lx.toInt(&g1,10);
-        cy = ly.toInt(&g2,10);
-        cz = lz.toInt(&g3,10);
-
-        ui->widget->modificaDimX(cx);
-        ui->widget->modificaDimY(cy);
-        ui->widget->modificaDimZ(cz);
-
-        ui->widget->criarNovaMatriz();
-
-    }
-
-
-}
-
-
-
-void MainWindow::abreDialogo()
-{
-    DialogDim d;
-    d.exec();
 
 }
 

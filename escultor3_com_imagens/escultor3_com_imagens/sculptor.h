@@ -92,7 +92,7 @@ public:
 
     void writeOFF(string filename);
 
-    vector<vector<vector<Voxel>>> copyM(int);
+    vector<vector<vector<Voxel>>> copyM(int z);
 
 };
 

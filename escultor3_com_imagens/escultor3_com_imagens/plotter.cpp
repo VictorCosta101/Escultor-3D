@@ -3,14 +3,12 @@
 #include <QPen>
 #include <QBrush>
 #include <vector>
-#include <QString>
 
 
 Plotter::Plotter(QWidget *parent) : QWidget(parent)
 {
-    v = new  Sculptor(21,11,11);
-
     dimX = 21; dimY = 11; dimZ = 11;
+    v = new  Sculptor(dimX,dimY,dimZ);
 
     pr=255;pg=255;pb=255;
 
@@ -128,17 +126,17 @@ void Plotter::criarObjeto(int ob)
     if(ob  == 6)
     {
         v->setColor(pr,pg,pb,1.0);
-        v->cutBox(mx,mx+bx,my,my+by,dim,dim+bz);
+        v->cutBox(mx,mx+5,my,my+5,dim,dim+5);
     }
     if(ob == 7 )
     {
         v->setColor(pr,pg,pb,1.0);
-        v->putEllipsoid(mx,my,dim,erx,ery,erz);
+        v->putEllipsoid(mx,my,dim,3,4,5);
     }
     if(ob == 8)
     {
         v->setColor(pr,pg,pb,1.0);
-        v->cutEllipsoid(mx,my,dim,erx,ery,erz);
+        v->cutEllipsoid(mx,my,dim,3,4,5);
     }
 
     repaint();
@@ -207,14 +205,15 @@ void Plotter::modificaDimZ(int _z)
 
 void Plotter::criarNovaMatriz()
 {
-   cout<<"cnm"<<endl;
-   cout<<"Dim x : "<<dimX<<endl;
-   cout<<"Dim y : "<<dimY<<endl;
-   cout<<"Dim z : "<<dimZ<<endl;
-   v->~Sculptor();
-   v = new Sculptor(dimX,dimY,dimZ);
+   cout<<"DimX = "<<dimX<<endl;
+   cout<<"DimY = "<<dimY<<endl;
+   cout<<"DimZ = "<<dimZ<<endl;
 
-   repaint();
+    if(teste){
+    v = new Sculptor(dimX,dimY,dimZ);
+    cout<<"teste1950"<<endl;
+   // repaint();
+    }
 }
 
 void Plotter::deletarMatriz()
@@ -259,11 +258,10 @@ void Plotter::modificaElliRz(int _z)
     repaint();
 }
 
-void Plotter::salvarDesenho()
+void Plotter::salvar(string a)
 {
-    string objeto ="objeto1";
 
-    v->writeOFF(objeto);
+    v->writeOFF(a);
 }
 
 

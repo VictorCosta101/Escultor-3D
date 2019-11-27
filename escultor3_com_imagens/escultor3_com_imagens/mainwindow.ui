@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>777</width>
-    <height>543</height>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,10 +27,10 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>390</y>
-      <width>261</width>
-      <height>78</height>
+      <x>550</x>
+      <y>380</y>
+      <width>105</width>
+      <height>80</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -96,11 +96,8 @@
       <height>20</height>
      </rect>
     </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
     <property name="maximum">
-     <number>99</number>
+     <number>9</number>
     </property>
     <property name="sliderPosition">
      <number>5</number>
@@ -184,11 +181,85 @@
    <widget class="PlotterCor" name="widgetCor" native="true">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>390</y>
-      <width>101</width>
+      <x>650</x>
+      <y>380</y>
+      <width>120</width>
       <height>80</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonNova">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>420</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nova</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="Dimx">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>400</y>
+      <width>160</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="DimY">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>430</y>
+      <width>160</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="dimZ">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>460</y>
+      <width>160</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonDelete">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>450</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -276,7 +347,7 @@
       <x>580</x>
       <y>40</y>
       <width>171</width>
-      <height>102</height>
+      <height>107</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_5">
@@ -356,7 +427,7 @@
      <x>0</x>
      <y>0</y>
      <width>777</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -365,7 +436,6 @@
     </property>
     <addaction name="actionSalvar"/>
     <addaction name="actionAbrir"/>
-    <addaction name="actionabrirNovaCanvas"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -387,6 +457,10 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionVoxel">
+   <property name="icon">
+    <iconset resource="icones.qrc">
+     <normaloff>:/icones/imagens_projeto/voxel.png</normaloff>:/icones/imagens_projeto/voxel.png</iconset>
+   </property>
    <property name="text">
     <string>Voxel</string>
    </property>
@@ -397,6 +471,10 @@
    </property>
   </action>
   <action name="actionEsfera">
+   <property name="icon">
+    <iconset resource="icones.qrc">
+     <normaloff>:/icones/imagens_projeto/esfera.png</normaloff>:/icones/imagens_projeto/esfera.png</iconset>
+   </property>
    <property name="text">
     <string>Esfera</string>
    </property>
@@ -407,6 +485,10 @@
    </property>
   </action>
   <action name="actionBox">
+   <property name="icon">
+    <iconset resource="icones.qrc">
+     <normaloff>:/icones/imagens_projeto/box.png</normaloff>:/icones/imagens_projeto/box.png</iconset>
+   </property>
    <property name="text">
     <string>Box</string>
    </property>
@@ -417,6 +499,10 @@
    </property>
   </action>
   <action name="actionEllipsoid">
+   <property name="icon">
+    <iconset resource="icones.qrc">
+     <normaloff>:/icones/imagens_projeto/elipse.png</normaloff>:/icones/imagens_projeto/elipse.png</iconset>
+   </property>
    <property name="text">
     <string>Ellipsoid</string>
    </property>
@@ -436,11 +522,6 @@
     <string>Abrir</string>
    </property>
   </action>
-  <action name="actionabrirNovaCanvas">
-   <property name="text">
-    <string>abrirNovaCanvas</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -453,6 +534,7 @@
     <slot>setAmplitude(int)</slot>
     <slot>slot1()</slot>
     <slot>exibeCorSelecionada(int)</slot>
+    <slot>mudaAmplitude(int)</slot>
    </slots>
   </customwidget>
   <customwidget>
@@ -462,7 +544,9 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="icones.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>actionVoxel</sender>

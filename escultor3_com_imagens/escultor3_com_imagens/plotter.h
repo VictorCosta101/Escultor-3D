@@ -102,10 +102,7 @@ public slots:
     void modificaElliRy(int);
     void modificaElliRz(int);
 
-   //Salvar desenho
-    void salvarDesenho();
-
-
+    void salvar(string a);
 
 
 
