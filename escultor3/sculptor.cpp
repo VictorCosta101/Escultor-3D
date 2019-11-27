@@ -301,14 +301,14 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 void Sculptor::writeOFF(string filename)
 {
     cout<<"teste 2202"<<endl;
-    ofstream objeto;
+    ofstream objeto(filename);
 
     int Nvert = 0;//variavel para o calculo de vertices
     int Nface = 0;// variavel para o calculo de faces
     int aux = 0; // variavel auxiliar
 
 
-    objeto.open("C:/Users/Victor/Desktop/testeObjeto/"+filename+".off"); // local onde o arquivo OFF fica armazenado
+    //objeto.open("C:/Users/Victor/Desktop/testeObjeto/"+filename+".off"); // local onde o arquivo OFF fica armazenado
 
     // objeto.open("C:/Users/UFRNLAB/Desktop/"+filename+".off");
 

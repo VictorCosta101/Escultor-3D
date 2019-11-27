@@ -97,7 +97,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
    //Salvar desenho
 
-    connect(ui->actionSalvar,SIGNAL(clicked(bool)),ui->widget,SLOT(salvarDensenho()));
+    connect(ui->actionSalvar,
+            SIGNAL(triggered(bool)),
+            ui->widget,
+            SLOT(salvarDesenho()));
 
 
 
