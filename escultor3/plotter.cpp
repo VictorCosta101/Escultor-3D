@@ -263,8 +263,8 @@ void Plotter::salvarDesenho()
 {
     //string objeto ="objeto1";
 
-    v->writeOFF("C:/Users/Victor/Desktop/testeObjeto/objeto1.off");
-    //v->writeOFF("C:/Users/UFRNLAB/Desktop/objeto1.off");
+    //v->writeOFF("C:/Users/Victor/Desktop/testeObjeto/objeto1.off");
+    v->writeOFF("C:/Users/UFRNLAB/Desktop/objeto1.off");
 
 }
 
