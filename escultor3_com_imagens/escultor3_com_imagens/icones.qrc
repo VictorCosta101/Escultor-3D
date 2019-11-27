@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/icones">
-        <file>imagens_projeto/box.png</file>
-        <file>imagens_projeto/elipse.png</file>
-        <file>imagens_projeto/esfera.png</file>
-        <file>imagens_projeto/voxel.png</file>
-        <file>imagens_projeto/esfera.html</file>
-    </qresource>
-</RCC>
